@@ -82,14 +82,14 @@ function Register() {
         </form>
 
         {/* Login Link */}
-        <p className="text-sm text-center mt-4">
-          Already have an account?{" "}
-          <span
+        <p className="text-sm text-center mt-4 text-gray-600">
+        Already have an account?{" "}
+        <span
             onClick={() => navigate("/")}
-            className="text-blue-600 cursor-pointer"
-          >
+            className="text-blue-600 font-medium cursor-pointer hover:underline"
+        >
             Login
-          </span>
+        </span>
         </p>
 
       </div>

@@ -68,8 +68,14 @@ function Login() {
           Login
         </button>
 
-        <p onClick={() => navigate("/register")}>
-          Don't have an account? Register
+        <p className="text-sm text-center mt-4 text-gray-600">
+          Don't have an account?{" "}
+          <span
+            onClick={() => navigate("/register")}
+            className="text-blue-600 font-medium cursor-pointer hover:underline"
+          >
+            Register
+          </span>
         </p>
 
       </form>
