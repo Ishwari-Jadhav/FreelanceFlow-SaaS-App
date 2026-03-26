@@ -7,6 +7,7 @@ import Clients from "./pages/Clients";
 import Tasks from "./pages/Tasks";
 import Invoices from "./pages/Invoices";
 import InvoiceHistory from "./pages/InvoiceHistory";
+import Register from "./pages/Register";
 
 function App() {
   return (
