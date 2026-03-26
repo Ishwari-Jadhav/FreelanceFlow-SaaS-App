@@ -82,7 +82,7 @@ npm run dev
 
 ---
 
-## 📸 Demo Data
+## Demo Data
 
 Use sample data:
 - 1 Client
@@ -92,14 +92,14 @@ Use sample data:
 
 ---
 
-## 📄 Invoice Logic
+## Invoice Logic
 
 Total = Duration × Hourly Rate
 
 
 ---
 
-## 🎯 Project Objective
+## Project Objective
 
 To simplify freelance workflow by combining:
 - Task Management
@@ -110,5 +110,5 @@ into a single platform.
 
 ---
 
-## 👩‍💻 Developed By
+## Developed By
 Ishwari Pravin Jadhav
