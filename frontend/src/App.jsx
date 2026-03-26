@@ -24,6 +24,8 @@ function App() {
 
         <Route path="/invoice-history" element={<InvoiceHistory />} />
 
+        <Route path="/register" element={<Register />} />
+
         <Route
           path="/dashboard"
           element={

@@ -67,6 +67,11 @@ function Login() {
         >
           Login
         </button>
+
+        <p onClick={() => navigate("/register")}>
+          Don't have an account? Register
+        </p>
+
       </form>
     </div>
   );
