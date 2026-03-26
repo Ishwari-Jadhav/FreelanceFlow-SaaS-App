@@ -1,12 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,23 +20,79 @@ function Register() {
         form
       );
 
-      alert("Registered successfully!");
+      alert("Registration Successful ✅");
+      navigate("/"); // go to login
     } catch (err) {
-      alert("Registration failed");
+      console.log(err);
+      alert("Registration Failed ❌");
     }
   };
 
   return (
-    <div className="p-6">
-      <h2>Register</h2>
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-xl shadow-md w-96">
+        
+        {/* Title */}
+        <h1 className="text-2xl font-bold text-center text-blue-600 mb-2">
+          FreelanceFlow 🚀
+        </h1>
+        <p className="text-center text-gray-500 mb-6">
+          Create your account
+        </p>
 
-      <form onSubmit={handleSubmit}>
-        <input placeholder="Name" onChange={e => setForm({...form, name: e.target.value})} />
-        <input placeholder="Email" onChange={e => setForm({...form, email: e.target.value})} />
-        <input placeholder="Password" type="password" onChange={e => setForm({...form, password: e.target.value})} />
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-4">
 
-        <button type="submit">Register</button>
-      </form>
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full p-2 border rounded"
+            onChange={(e) =>
+              setForm({ ...form, name: e.target.value })
+            }
+            required
+          />
+
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-2 border rounded"
+            onChange={(e) =>
+              setForm({ ...form, email: e.target.value })
+            }
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full p-2 border rounded"
+            onChange={(e) =>
+              setForm({ ...form, password: e.target.value })
+            }
+            required
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+          >
+            Register
+          </button>
+        </form>
+
+        {/* Login Link */}
+        <p className="text-sm text-center mt-4">
+          Already have an account?{" "}
+          <span
+            onClick={() => navigate("/")}
+            className="text-blue-600 cursor-pointer"
+          >
+            Login
+          </span>
+        </p>
+
+      </div>
     </div>
   );
 }
