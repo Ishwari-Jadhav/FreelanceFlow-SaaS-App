@@ -16,7 +16,7 @@ function Invoices() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/invoices",
+        "https://freelanceflow-backend-xjnm.onrender.com/api/invoices",
         {
           client_id: clientId,
           start_date: startDate,
@@ -36,7 +36,7 @@ function Invoices() {
 
   const fetchClients = async () => {
     try {
-        const res = await axios.get("http://localhost:5000/api/clients", {
+        const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/clients", {
         headers: { Authorization: `Bearer ${token}` },
         });
         setClients(res.data);
@@ -105,7 +105,7 @@ function Invoices() {
             onClick={async () => {
                 try {
                 const res = await axios.get(
-                    `http://localhost:5000/api/invoices/pdf/${invoice.invoice.id}`,
+                    `https://freelanceflow-backend-xjnm.onrender.com/api/invoices/pdf/${invoice.invoice.id}`,
                     {
                     headers: { Authorization: `Bearer ${token}` },
                     responseType: "blob",

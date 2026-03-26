@@ -65,3 +65,9 @@ app.use("/api/invoices", invoiceRoutes);
 const dashboardRoutes = require("./routes/dashboardRoutes");
 
 app.use("/api/dashboard", dashboardRoutes);
+
+const cors = require("cors");
+
+app.use(cors({
+  origin: "*"
+}));
