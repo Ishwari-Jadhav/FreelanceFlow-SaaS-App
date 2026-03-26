@@ -66,7 +66,7 @@ FreelanceFlow/
 
 ### 1. Clone Repository
 
-git clone https://github.com/Ishwari-Jadhav/FreelanceFlow.git
+git clone https://github.com/Ishwari-Jadhav/FreelanceFlow-SaaS-App.git
 
 ### 2. Backend Setup
 
