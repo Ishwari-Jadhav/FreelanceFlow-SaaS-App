@@ -1,4 +1,4 @@
-# 🚀 FreelanceFlow
+# 🚀 FreelanceFlow SaaS App
 
 FreelanceFlow is a full-stack SaaS web application designed to help freelancers manage their clients, projects, tasks, time tracking, and invoices in one place.
 
