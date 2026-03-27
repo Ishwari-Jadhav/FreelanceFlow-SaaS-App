@@ -23,8 +23,8 @@ function Register() {
       alert("Registration Successful ✅");
       navigate("/"); // go to login
     } catch (err) {
-        console.log(err.response?.data);
-        alert("Registration Failed ❌");
+      console.log(err);
+      alert("Registration Failed ❌");
     }
   };
 
