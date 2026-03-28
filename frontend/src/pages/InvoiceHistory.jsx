@@ -44,7 +44,7 @@ function InvoiceHistory() {
                   onClick={async () => {
                     try {
                       const res = await axios.get(
-                        `https://freelanceflow-backend-beav.onrender.com/api/invoices/${inv.id}/pdf`,
+                        `https://freelanceflow-backend-beav.onrender.com/api/invoices/pdf/${inv.id}`,
                         {
                           headers: { Authorization: `Bearer ${token}` },
                           responseType: "blob",
