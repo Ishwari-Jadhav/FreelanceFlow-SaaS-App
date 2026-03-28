@@ -11,11 +11,6 @@ exports.startTimer = async (req, res) => {
       [task_id, req.user.id]
     );
 
-    await pool.query(
-      "UPDATE tasks SET status = 'In Progress' WHERE id = $1",
-      [task_id]
-    );
-
     res.status(201).json(result.rows[0]);
   } catch (error) {
     console.error(error);
@@ -35,13 +30,6 @@ exports.stopTimer = async (req, res) => {
        WHERE id = $1 AND user_id = $2
        RETURNING *`,
       [id, req.user.id]
-    );
-
-    const log = result.rows[0];
-
-    await pool.query(
-      "UPDATE tasks SET status = 'Completed' WHERE id = $1",
-      [log.task_id]
     );
 
     res.json(result.rows[0]);
