@@ -17,9 +17,8 @@ exports.createInvoice = async (req, res) => {
     JOIN clients c ON p.client_id = c.id
     WHERE tl.user_id = $1
     AND c.id = $2
-    AND tl.is_billed = false
-    AND DATE(tl.start_time) BETWEEN $3 AND $4`,
-    [req.user.id, client_id, start_date, end_date]
+    AND tl.is_billed = false`,
+    [req.user.id, client_id]
   );
 
     // 2. Calculate total
