@@ -17,7 +17,7 @@ function Dashboard() {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-        "https://freelanceflow-backend-xjnm.onrender.com/api/dashboard",
+        "http://localhost:5000/api/dashboard",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -14,7 +14,7 @@ function Projects() {
   // Fetch projects
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/projects", {
+      const res = await axios.get("http://localhost:5000/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(res.data);
@@ -27,7 +27,7 @@ function Projects() {
     fetchProjects();
 
     // Fetch Clients
-    axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/clients", {
+    axios.get("http://localhost:5000/api/clients", {
     headers: { Authorization: `Bearer ${token}` },
     })
     .then(res => setClients(res.data))
@@ -41,7 +41,7 @@ function Projects() {
 
     try {
       await axios.post(
-        "https://freelanceflow-backend-xjnm.onrender.com/api/projects",
+        "http://localhost:5000/api/projects",
         {
           name,
           description,
@@ -67,7 +67,7 @@ function Projects() {
 
   const handleDelete = async (id) => {
     try {
-        await axios.delete(`https://freelanceflow-backend-xjnm.onrender.com/api/projects/${id}`, {
+        await axios.delete(`http://localhost:5000/api/projects/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
         });
 

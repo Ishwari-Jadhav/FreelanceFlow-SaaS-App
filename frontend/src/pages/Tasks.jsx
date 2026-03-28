@@ -98,7 +98,7 @@ function Tasks() {
   const handleStart = async (taskId) => {
     try {
       await axios.post(
-        "https://freelanceflow-backend-xjnm.onrender.com/api/time/start",
+        "http://localhost:5000/api/time/start",
         { task_id: taskId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -114,7 +114,7 @@ function Tasks() {
   // Stop timer (FIXED)
   const handleStop = async () => {
     try {
-      const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/time", {
+      const res = await axios.get("http://localhost:5000/api/time", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -131,7 +131,7 @@ function Tasks() {
       }
 
       await axios.put(
-        `https://freelanceflow-backend-xjnm.onrender.com/api/time/stop/${runningLog.id}`,
+        `http://localhost:5000/api/time/stop/${runningLog.id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -15,7 +15,7 @@ function Clients() {
   // Fetch clients
   const fetchClients = async () => {
     try {
-      const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/clients", {
+      const res = await axios.get("http://localhost:5000/api/clients", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setClients(res.data);
@@ -34,7 +34,7 @@ function Clients() {
 
     try {
       await axios.post(
-        "https://freelanceflow-backend-xjnm.onrender.com/api/clients",
+        "http://localhost:5000/api/clients",
         {
           name,
           email,
@@ -64,7 +64,7 @@ function Clients() {
   // Delete client
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://freelanceflow-backend-xjnm.onrender.com/api/clients/${id}`, {
+      await axios.delete(`http://localhost:5000/api/clients/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

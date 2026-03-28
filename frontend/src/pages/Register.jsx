@@ -16,7 +16,7 @@ function Register() {
 
     try {
       await axios.post(
-        "https://freelanceflow-backend-xjnm.onrender.com/api/auth/register",
+        "http://localhost:5000/api/auth/register",
         form
       );
 
