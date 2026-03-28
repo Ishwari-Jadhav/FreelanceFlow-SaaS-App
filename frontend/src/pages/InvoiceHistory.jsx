@@ -40,13 +40,33 @@ function InvoiceHistory() {
                 <p><strong>Total:</strong> Rs {inv.total_amount}</p>
                 <p><strong>Date:</strong> {new Date(inv.created_at).toLocaleDateString()}</p>
 
-                <a
-                  href={`https://freelanceflow-backend-beav.onrender.com/api/invoices/pdf/${inv.id}`}
-                  target="_blank"
+                <button
+                  onClick={async () => {
+                    try {
+                      const res = await axios.get(
+                        `https://freelanceflow-backend-beav.onrender.com/api/invoices/${inv.id}/pdf`,
+                        {
+                          headers: { Authorization: `Bearer ${token}` },
+                          responseType: "blob",
+                        }
+                      );
+
+                      const url = window.URL.createObjectURL(new Blob([res.data]));
+                      const link = document.createElement("a");
+                      link.href = url;
+                      link.setAttribute("download", `invoice-${inv.id}.pdf`);
+                      document.body.appendChild(link);
+                      link.click();
+                      link.remove();
+                    } catch (err) {
+                      console.log(err);
+                      alert("Error downloading PDF");
+                    }
+                  }}
                   className="text-blue-600 underline"
                 >
                   Download PDF
-                </a>
+                </button>
               </div>
             ))}
           </div>

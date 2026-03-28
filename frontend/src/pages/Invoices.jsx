@@ -105,7 +105,7 @@ function Invoices() {
             onClick={async () => {
                 try {
                 const res = await axios.get(
-                    `https://freelanceflow-backend-beav.onrender.com/api/invoices/pdf/${invoice.invoice.id}`,
+                    `https://freelanceflow-backend-beav.onrender.com/api/invoices/${invoice.invoice.id}/pdf`,
                     {
                     headers: { Authorization: `Bearer ${token}` },
                     responseType: "blob",
