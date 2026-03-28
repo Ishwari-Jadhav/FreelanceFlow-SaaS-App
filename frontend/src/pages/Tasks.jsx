@@ -105,6 +105,7 @@ function Tasks() {
 
       alert("Timer started");
       fetchLogs();
+      fetchTasks();
     } catch (err) {
       console.log(err);
       alert("Error starting timer");
@@ -138,6 +139,7 @@ function Tasks() {
 
       alert("Timer stopped");
       fetchLogs();
+      fetchTasks();
     } catch (err) {
       console.log(err);
       alert("Error stopping timer");
