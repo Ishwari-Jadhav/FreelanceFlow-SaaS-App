@@ -8,7 +8,7 @@ function InvoiceHistory() {
 
   const fetchInvoices = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/invoices", {
+      const res = await axios.get("https://freelanceflow-backend-beav.onrender.com/api/invoices", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setInvoices(res.data);
@@ -41,7 +41,7 @@ function InvoiceHistory() {
                 <p><strong>Date:</strong> {new Date(inv.created_at).toLocaleDateString()}</p>
 
                 <a
-                  href={`http://localhost:5000/api/invoices/pdf/${inv.id}`}
+                  href={`https://freelanceflow-backend-beav.onrender.com/api/invoices/pdf/${inv.id}`}
                   target="_blank"
                   className="text-blue-600 underline"
                 >

@@ -14,7 +14,7 @@ function Tasks() {
   // Fetch tasks
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/tasks", {
+      const res = await axios.get("https://freelanceflow-backend-beav.onrender.com/api/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -26,7 +26,7 @@ function Tasks() {
   // Fetch projects
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/projects", {
+      const res = await axios.get("https://freelanceflow-backend-beav.onrender.com/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(res.data);
@@ -38,7 +38,7 @@ function Tasks() {
   // Fetch logs
   const fetchLogs = async () => {
     try {
-      const res = await axios.get("https://freelanceflow-backend-xjnm.onrender.com/api/time", {
+      const res = await axios.get("https://freelanceflow-backend-beav.onrender.com/api/time", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLogs(res.data);
@@ -59,7 +59,7 @@ function Tasks() {
 
     try {
       await axios.post(
-        "https://freelanceflow-backend-xjnm.onrender.com/api/tasks",
+        "https://freelanceflow-backend-beav.onrender.com/api/tasks",
         {
           title,
           description: "Task description",
@@ -83,7 +83,7 @@ function Tasks() {
   // Delete task
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://freelanceflow-backend-xjnm.onrender.com/api/tasks/${id}`, {
+      await axios.delete(`https://freelanceflow-backend-beav.onrender.com/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -98,7 +98,7 @@ function Tasks() {
   const handleStart = async (taskId) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/time/start",
+        "https://freelanceflow-backend-beav.onrender.com/api/time/start",
         { task_id: taskId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -114,7 +114,7 @@ function Tasks() {
   // Stop timer (FIXED)
   const handleStop = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/time", {
+      const res = await axios.get("https://freelanceflow-backend-beav.onrender.com/api/time", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -131,7 +131,7 @@ function Tasks() {
       }
 
       await axios.put(
-        `http://localhost:5000/api/time/stop/${runningLog.id}`,
+        `https://freelanceflow-backend-beav.onrender.com/api/time/stop/${runningLog.id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
